@@ -1,2 +1,2 @@
-# IA---Jogo-da-Velha-
+# IA Jogo da Velha 
 Repositório da disciplina de Inteligência Artificial
