@@ -22,7 +22,7 @@ public class Main {
         jogadores[0] = new JogadorLinhaColuna("LinhaColuna");
         jogadores[1] = new JogadorAleatorio("Aleatório");
         //jogadores[2] = new Manual("Eu");
-        jogadores[2] = new JogadorAgenteNovo("AgenteNovo");
+        jogadores[2] = new JogadorCavernaDoDragao("CavernaDoDragao");
         
         Campeonato campeonato = new Campeonato(jogadores, 3);
         Participacao[] p = campeonato.runPontosCorridos();

@@ -2,9 +2,9 @@ package jogadores;
 
 import java.util.Random;
 
-public class JogadorAgenteNovo extends Jogador {
+public class JogadorCavernaDoDragao extends Jogador {
 
-    public JogadorAgenteNovo(String nome) {
+    public JogadorCavernaDoDragao(String nome) {
         super(nome);
     }
 
