@@ -37,14 +37,14 @@ public class JogadorAgenteNovo extends Jogador {
         }
 
         // verifica se há 2 cantos que combinam já marcados
-        int cantoA[] = cantos[0];
-        int cantoB[] = cantos[1];
-        int cantoC[] = cantos[2];
-        int cantoD[] = cantos[3];
+        int cantoSupEsquerdo[] = cantos[0];
+        int cantoSupDireito[] = cantos[1];
+        int cantoInfEsquerdo[] = cantos[2];
+        int cantoInfDireito[] = cantos[3];
 
         // se tabuleiro impar comparar:
         if (impar) {
-            if (tabuleiro[cantoA[0]][cantoA[1]] != -1 && tabuleiro[cantoC[0]][cantoC[1]] != -1
+            if (tabuleiro[cantoSupEsquerdo[0]][cantoSupEsquerdo[1]] != -1 && tabuleiro[cantoInfEsquerdo[0]][cantoInfEsquerdo[1]] != -1
                     && tabuleiro[centro_i][centro_j] != 1) {
                 for (int i = 1; i < tabuleiro[0].length; i++) {
                     if (tabuleiro[i][i] == -1) {
@@ -54,7 +54,7 @@ public class JogadorAgenteNovo extends Jogador {
                     }
                 }
             }
-            if (tabuleiro[cantoB[0]][cantoB[1]] != -1 && tabuleiro[cantoD[0]][cantoD[1]] != -1
+            if (tabuleiro[cantoSupDireito[0]][cantoSupDireito[1]] != -1 && tabuleiro[cantoInfDireito[0]][cantoInfDireito[1]] != -1
                     && tabuleiro[centro_i][centro_j] != 1) {
                 //lógica inversa
             }
@@ -62,7 +62,7 @@ public class JogadorAgenteNovo extends Jogador {
 
         // comparar
         // A-B | B-C | C-D | D-A
-        if (tabuleiro[cantoA[0]][cantoA[1]] != -1 && tabuleiro[cantoB[0]][cantoB[1]] != -1) {
+        if (tabuleiro[cantoSupEsquerdo[0]][cantoSupEsquerdo[1]] != -1 && tabuleiro[cantoSupDireito[0]][cantoSupDireito[1]] != -1) {
             for (int i = 1; i < tabuleiro[0].length; i++) {
                 if (tabuleiro[0][i] == -1) {
                     jogada[0] = 0;
@@ -71,7 +71,7 @@ public class JogadorAgenteNovo extends Jogador {
                 }
             }
         }
-        if (tabuleiro[cantoB[0]][cantoB[1]] != -1 && tabuleiro[cantoC[0]][cantoC[1]] != -1) {
+        if (tabuleiro[cantoSupDireito[0]][cantoSupDireito[1]] != -1 && tabuleiro[cantoInfEsquerdo[0]][cantoInfEsquerdo[1]] != -1) {
             for (int i = 1; i < tabuleiro[0].length; i++) {
                 if (tabuleiro[i][indexFim] == -1) {
                     jogada[0] = i;
@@ -80,7 +80,7 @@ public class JogadorAgenteNovo extends Jogador {
                 }
             }
         }
-        if (tabuleiro[cantoC[0]][cantoC[1]] != -1 && tabuleiro[cantoD[0]][cantoD[1]] != -1) {
+        if (tabuleiro[cantoInfEsquerdo[0]][cantoInfEsquerdo[1]] != -1 && tabuleiro[cantoInfDireito[0]][cantoInfDireito[1]] != -1) {
             for (int i = 1; i < tabuleiro[0].length; i++) {
                 if (tabuleiro[indexFim][i] == -1) {
                     jogada[0] = indexFim;
@@ -89,7 +89,7 @@ public class JogadorAgenteNovo extends Jogador {
                 }
             }
         }
-        if (tabuleiro[cantoD[0]][cantoD[1]] != -1 && tabuleiro[cantoA[0]][cantoA[1]] != -1) {
+        if (tabuleiro[cantoInfDireito[0]][cantoInfDireito[1]] != -1 && tabuleiro[cantoSupEsquerdo[0]][cantoSupEsquerdo[1]] != -1) {
             for (int i = 1; i < tabuleiro[0].length; i++) {
                 if (tabuleiro[i][0] == -1) {
                     jogada[0] = i;
